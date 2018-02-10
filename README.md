@@ -80,7 +80,7 @@ principled shader (not core):
     * enable Base, path "op:/img/comp1/normal"
 
 - Displacement
-    * enable Base Color, path "op:/img/comp1/color"
+    * enable Texture Displacement, path "op:/img/comp1/height"
 
 
 #### Display Options (press D with mouse over viewport) ####
