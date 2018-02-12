@@ -1,3 +1,4 @@
+
 # COPSTANCE
 Tips for Houdini procedural texturing workflow in COPs, inspired by Substance Designer.
 
@@ -13,12 +14,15 @@ Download the contents of this repository, open the example scene, set up your pa
 ![alt text](https://github.com/emillxyz/copstance/raw/master/img/copstance_example_scene_01.png "Example scene content & recommended panel layout")
 
 
-# general info
+# project goal & future improvements
 
-need to be mindful of image planes, masking & frame scope in COP nodes
 
-exporting? tiling? resolution?
 
+- POM shader
+- making assets of these kind of procedural textures
+- usage in engine/Unity/Unreal
+    * recommended to just export textures
+    * [[TODO make/link tutorial]]
 
 
 # node reference
@@ -36,8 +40,70 @@ SVG(sdesigner)/roto(nuke)                    | rotoshape                 |
 
 
 
+# general info and tips & tricks
+
+- panel layout a.k.a Desktop
+    * this repository includes the Copstance.desk file that should help you to set up your panel layout in a suitable way for this kind of work [[TODO how to import]]
+    * can also be done manually [[TODO link tutorial]]
+        - (Scene View, Composite View, Parameters, Network View)
+    * hey SideFX, any good way to persist a Desktop across crashes or save it with the scene file?
+- image planes
+    * C = color, A = alpha
+    * recommended to work mostly using C, because that allows for easy node thumbnails & Composite View previews
+    * VOPCOP generators & filters: bind export creates a new image plane
+- masking (COP node Mask tab)
+    * [[TODO]] add image
+    * the last input pin on each COP node is the mask input, which allows you to control to which part of the image should the effect be applied, using a mask texture
+    * Effect Amount = blend
+    * Mask Plane (often: C, Luminance)
+- Frame Scope
+    * the Frame Scope tab in COP nodes can generally be ignored (it's meant for compositing work: "which frames on the timeline should this node affect?"")
+- Scene View lighting modes (metallic unsupported in High Quality Lighting)
+- [[TODO]]: Composite View handles
+- VOPCOP generators & filters
+    * [[TODO]]: how to make a custom noise node
+    * bind export creates new image planes
+
+## viewport vs render
+- if displacement is set up correctly results are fairly representative
+    * [[TODO add comparison images]]
+
+## displacement / height / bump / normals
+Three main ways to display the height
+
+Recommended to 
+- Render tab, Display As: Subdivision Surface / curves
+    * otherwise not proper resolution in viewport displacement/tessellation
+- Display Options (press D with mouse over viewport)
+    * Geometry tab, Level Of Detail = 4 (under Tessellation)
+- Displacement
+    * enable Texture Displacement, path "op:/img/comp1/height"
+
+## resolution
+- Edit > Compositing Settings or Alt+Shift+I
+    * set resolution to 1024x1024 or 2048x2048 or similar
+    * this controls the default size on generator COP nodes (can be overridden on a per-node basis e.g. Color COP node, Image tab, Override Size)
+- if you're using Houdini Apprentice resolution in Compositing Settings is capped at 720p
+    * you can still work in e.g. 2048x2048 by manually setting each generator node to that resolution on the Image tab
+    * cannot export larger than 720p from Apprentice
+
+## exporting
+- box select all /img/comp1/export_* nodes and click render to export texture set
+- export path? naming? (make easy to change export path & master name)
+- Indie max export resolution has just been bumped up to 4k (4096x4096), yay!
+
+## [[TODO]]: tiling
+- transfrom COP repeat parameter
+- any other tips on making sure the textures tile?
+
+## [[TODO]]: importing geometry
+- scatter-based techniques
+- SOP Import COP
+
+
 # scene setup
 
+## (a.k.a how to go from an empty houdini scene to the copstance example file)
 
 #### /obj ####
 
