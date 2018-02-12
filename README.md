@@ -18,6 +18,10 @@ Download the contents of this repository, open the example scene, set up your pa
 
 To show how to use Houdini COPs to create procedural textures (PBR, 2D). [[TODO proper paragraph]]
 
+For who?
+- for those who already know Substance Designer, UE4/Unity/other node-based material system or compositing software (Nuke, Fusion, After Effects) and are curious about Houdini
+- if you're totally new to this stuff, Allegorithmic's Youtube channel [[TODO link]] is a good place to start learning
+
 stuff to cover in the future:
 - making assets of these of procedural textures
 - usage in engine/renderer/Unity/Unreal/Marmoset
