@@ -63,23 +63,30 @@ SVG(sdesigner)/roto(nuke)                    | rotoshape                 |
 - VOPCOP generators & filters
     * [[TODO]]: how to make a custom noise node
     * bind export creates new image planes
+- node defaults
+    * [[TODO]]: how to set defaults
+    * [[TODO]]: some useful examples
 
-## viewport vs render
+### viewport vs render
 - if displacement is set up correctly results are fairly representative
     * [[TODO add comparison images]]
 
-## displacement / height / bump / normals
-Three main ways to display the height
+### displacement / height / bump / normals
+Three main ways to display the height: displacement, POM (parallax occlusion mapping), bump/normals
+- [[TODO]]: link explanations/example images
 
-Recommended to 
-- Render tab, Display As: Subdivision Surface / curves
-    * otherwise not proper resolution in viewport displacement/tessellation
-- Display Options (press D with mouse over viewport)
-    * Geometry tab, Level Of Detail = 4 (under Tessellation)
-- Displacement
-    * enable Texture Displacement, path "op:/img/comp1/height"
+Recommended to work using displacement as the height map preview. POM (parallax occlusion mapping) would probably be more practical if displacement is too slow, but no such shader is included with Houdini unfortunately (correct me if/when I'm wrong). Bump/normals is better than nothing, but quite inaccurate.
 
-## resolution
+- Setup:
+    * in preview object (/obj/grid1)
+        - Render tab, Display As: Subdivision Surface / curves
+    * Display Options (press D with mouse over viewport)
+        - Geometry tab, Level Of Detail = 4 (under Tessellation)
+    * in material (/mat/principledshader1, Displacement tab)
+        - enable Texture Displacement
+        - path "op:/img/comp1/height"
+
+### resolution
 - Edit > Compositing Settings or Alt+Shift+I
     * set resolution to 1024x1024 or 2048x2048 or similar
     * this controls the default size on generator COP nodes (can be overridden on a per-node basis e.g. Color COP node, Image tab, Override Size)
@@ -87,23 +94,27 @@ Recommended to
     * you can still work in e.g. 2048x2048 by manually setting each generator node to that resolution on the Image tab
     * cannot export larger than 720p from Apprentice
 
-## exporting
+### exporting
 - box select all /img/comp1/export_* nodes and click render to export texture set
 - export path? naming? (make easy to change export path & master name)
 - Indie max export resolution has just been bumped up to 4k (4096x4096), yay!
 
-## [[TODO]]: tiling
-- transfrom COP repeat parameter
+### [[TODO]]: tiling
+- transform COP repeat parameter
 - any other tips on making sure the textures tile?
 
-## [[TODO]]: importing geometry
+### [[TODO]]: importing geometry & using SOPs
 - scatter-based techniques
 - SOP Import COP
+- cool grid + ray SOP based techniques
+    * ray SOP with Direction from: Vector and Ray Direction: [0,1,0] is a nice way to shape a grid with arbitrary geometry
+    * what's a quick & efficient way to get that to COPs?
+![alt text](https://github.com/emillxyz/copstance/raw/master/img/raysop.png "Grid + Ray SOP")
 
 
 # scene setup
 
-## (a.k.a how to go from an empty houdini scene to the copstance example file)
+### (a.k.a how to go from an empty houdini scene to the copstance example file)
 
 #### /obj ####
 
