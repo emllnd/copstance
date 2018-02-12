@@ -24,6 +24,7 @@ color correction/hue shift/saturation        | hsv                       |
 shuffle(nuke)/channel boolean(fusion)        | channelcopy               |
 directional warp(sdesigner)/displace(fusion) | deform                    |
 clamp                                        | limit                     |
+SVG(sdesigner)/roto(nuke)                    | rotoshape                 |
 
 
 
