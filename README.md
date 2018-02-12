@@ -16,11 +16,11 @@ Download the contents of this repository, open the example scene, set up your pa
 
 # project goal & future improvements
 
+[[TODO]] To show how to use Houdini COPs to create procedural textures.
 
-
-- POM shader
-- making assets of these kind of procedural textures
-- usage in engine/Unity/Unreal
+future:
+- making assets of these of procedural textures
+- usage in engine/renderer/Unity/Unreal/Marmoset
     * recommended to just export textures
     * [[TODO make/link tutorial]]
 
@@ -29,7 +29,7 @@ Download the contents of this repository, open the example scene, set up your pa
 
 operation (in other software)                | recommended COP node      | notes
 -------------                                | -------------             | -------------
-levels/fit/curves(all)/Ramp Parameter        | lookup                    | set LUT Source default as Mono Ramp Parameter
+levels/fit/curves(all)/Ramp Parameter        | lookup                    | set LUT Source default as Mono Ramp Parameter and both spline point defaults as B-Spline (we're actually misusing a LUT operation here, just a nice way to get a simple but expressive ramp)
 curves(RGB individual)                       | color curve               |
 blend/mix                                    | composite                 | background as second input, Foreground Weight controls amount
 color correction/hue shift/saturation        | hsv                       |
@@ -44,7 +44,7 @@ SVG(sdesigner)/roto(nuke)                    | rotoshape                 |
 
 - panel layout a.k.a Desktop
     * this repository includes the Copstance.desk file that should help you to set up your panel layout in a suitable way for this kind of work [[TODO how to import]]
-    * can also be done manually [[TODO link tutorial]]
+    * can also be done manually [[TODO link docs/tutorial]]
         - (Scene View, Composite View, Parameters, Network View)
     * hey SideFX, any good way to persist a Desktop across crashes or save it with the scene file?
 - image planes
