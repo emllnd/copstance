@@ -10,6 +10,8 @@ This guide is a work in progress, star or check back every now and then. Suggest
 
 Download the contents of this repository, open the example scene, set up your panels (Scene View, Composite View, Parameters, Network View), check the included images & instructions below to see that everything looks correct. Then just delete the example nodes in /img/comp1 (outside the frame) and start building your network. Heightmap is usually a good place to start.
 
+![alt text](https://github.com/emillxyz/copstance/raw/master/img/copstance_example_scene_01.png "Example scene content & recommended panel layout")
+
 
 # general info
 
