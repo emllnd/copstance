@@ -16,9 +16,9 @@ Download the contents of this repository, open the example scene, set up your pa
 
 # project goal & future improvements
 
-[[TODO]] To show how to use Houdini COPs to create procedural textures.
+To show how to use Houdini COPs to create procedural textures (PBR, 2D). [[TODO proper paragraph]]
 
-future:
+stuff to cover in the future:
 - making assets of these of procedural textures
 - usage in engine/renderer/Unity/Unreal/Marmoset
     * recommended to just export textures
