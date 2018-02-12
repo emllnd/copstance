@@ -9,12 +9,7 @@ Work in progress, star or check back every now and then. Suggestions & fixes wel
 
 need to be mindful of image planes, masking & frame scope in COP nodes
 
-exporting?
-tiling? (Repeat parm in transform nodes)
-resolution?
-- where to adjust?
-- limitations in Indie/Apprentice
-
+exporting? tiling? resolution?
 
 
 
