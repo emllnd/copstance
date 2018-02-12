@@ -1,7 +1,7 @@
 # COPSTANCE
 Tips for Houdini procedural texturing workflow in COPs, inspired by Substance Designer.
 
-Work in progress, star or check back every now and then. Suggestions & fixes welcome as: github issues, email: [hi@emill.fi](mailto:hi@emill.fi?Subject=Copstance%20Ideas&Body=Copstance%20would%20be%20much%20better%20if...) or twitter (at or DM): [@\_\_emill](https://twitter.com/__emill). There will be more images and example files.
+This guide is a work in progress, star or check back every now and then. Suggestions & fixes welcome as: github issues, email: [hi@emill.fi](mailto:hi@emill.fi?Subject=Copstance%20Ideas&Body=Copstance%20would%20be%20much%20better%20if...) or twitter (at or DM): [@\_\_emill](https://twitter.com/__emill). There will be more images and example files.
 
 
 # getting started
