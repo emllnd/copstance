@@ -30,7 +30,7 @@ stuff to cover in the future:
 operation (in other software)                | recommended COP node      | notes
 -------------                                | -------------             | -------------
 levels/fit/curves(all)/Ramp Parameter        | lookup                    | set LUT Source default as Mono Ramp Parameter and both spline point defaults as B-Spline (we're actually misusing a LUT operation here, just a nice way to get a simple but expressive ramp)
-curves(RGB individual)                       | color curve               |
+curves(RGB individual)                       | colorcurve                |
 blend/mix                                    | composite                 | background as second input, Foreground Weight controls amount
 color correction/hue shift/saturation        | hsv                       |
 shuffle(nuke)/channel boolean(fusion)        | channelcopy               |
